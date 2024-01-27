@@ -1,0 +1,56 @@
+### User Login with Correct Credentials
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  "username": "christopher_phillips",
+  "password": "christy@123"
+}
+
+
+
+### Get States (Requires Token)
+GET http://localhost:3000/states/
+Authorization: Bearer <TOKEN>
+
+### Get State by ID (Requires Token)
+GET http://localhost:3000/states/:stateId/
+Authorization: Bearer <TOKEN>
+
+### Create District (Requires Token)
+POST http://localhost:3000/districts/
+Content-Type: application/json
+{
+  "districtName": "Bagalkot",
+  "stateId": 3,
+  "cases": 2323,
+  "cured": 2000,
+  "active": 315,
+  "deaths": 8
+}
+Authorization: Bearer <TOKEN>
+
+### Get District by ID (Requires Token)
+GET http://localhost:3000/districts/:districtId/
+Authorization: Bearer <TOKEN>
+
+### Delete District by ID (Requires Token)
+DELETE http://localhost:3000/districts/:districtId/
+Authorization: Bearer <TOKEN>
+
+### Update District by ID (Requires Token)
+PUT http://localhost:3000/districts/:districtId/
+Content-Type: application/json
+{
+  "districtName": "Nadia",
+  "stateId": 3,
+  "cases": 9628,
+  "cured": 6524,
+  "active": 3000,
+  "deaths": 104
+}
+Authorization: Bearer <TOKEN>
+
+### Get State Statistics by ID (Requires Token)
+GET http://localhost:3000/states/:stateId/stats/
+Authorization: Bearer <TOKEN>
